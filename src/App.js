@@ -10,13 +10,12 @@ function App() {
           <ul>
             <li>
               <Link to="/">Home</Link>
-              <Link to="/post">Post</Link>
             </li>
           </ul>
         </div>
         <Routes>
           <Route path="/" element={<PostList />} />
-          <Route path="/post" element={<PostItem />} />
+          <Route path="/posts/:postId" element={<PostItem />} />
         </Routes>
       </Router>
     </div>
