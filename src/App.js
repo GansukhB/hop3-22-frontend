@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import PostList from "./pages/PostList";
 import PostItem from "./pages/PostItem";
 import { AddPost } from "./pages/AddPost";
+import { Login } from "./pages/login";
 
 function App() {
   return (
@@ -15,12 +16,16 @@ function App() {
             <li>
               <Link to="/add_post">Add Post</Link>
             </li>
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
           </ul>
         </div>
         <Routes>
           <Route path="/" element={<PostList />} />
           <Route path="/posts/:postId" element={<PostItem />} />
           <Route path="/add_post" element={<AddPost />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </Router>
     </div>
