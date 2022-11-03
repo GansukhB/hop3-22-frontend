@@ -12,11 +12,17 @@ export const AddPost = () => {
   const [res, setRes] = useState('')
   
   const add = async () => {
-    const { data } = await API.post('posts', post)
-    if(data.error) {
-      setRes(data.error.message)
-    } else {
+    try {
+      const { data } = await API.post('posts', post)
       setRes('post added')
+    } catch (err) {
+
+      if (err.response.status === 401) {
+        setRes('unauthorized')
+      }
+      if (err.response.status === 400) {
+        setRes('dutuu bogolson ')
+      }
     }
   }
 
