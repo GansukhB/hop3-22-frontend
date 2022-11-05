@@ -18,6 +18,7 @@ const PostItem = () => {
     <div>
       <h1>{post.title}</h1>
       <div>{post.body}</div>
+      <img src={`http://localhost:3001/uploads/${post.coverImage}`} style={{ width: '200px', height: '200px' }} />
     </div>
   );
 };

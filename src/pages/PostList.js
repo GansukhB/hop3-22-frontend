@@ -5,6 +5,7 @@ import PostCard from "../components/PostCard";
 export default function PostList() {
   const [posts, setPosts] = useState([]);
 
+
   useEffect(() => {
     async function fetchData() {
       const response = await API.get("posts");
